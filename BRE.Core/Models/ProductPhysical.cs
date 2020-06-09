@@ -12,8 +12,6 @@ namespace BRE.Core.Models
         public List<string> PaymentDone()
         {
             List<string> statues = new List<string>();
-            statues.Add("Generated Packaging Slip");
-            statues.Add("Generated Commision To Agent");
 
             return statues;
         }
