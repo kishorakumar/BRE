@@ -14,7 +14,7 @@ namespace BRE.UnitTest
         }
 
         [Test]
-        public void PaymentFor_BookProduct_MustGeneratePackagingSlip()
+        public void PaymentFor_BookProduct_MustGenerateDuplicateSlipForRoyalty()
         {
             IProduct physicalProduct = new ProductBook();
 
@@ -38,7 +38,7 @@ namespace BRE.UnitTest
         }
 
         [Test]
-        public void PaymentFor_BookProduct_MustGenerateCommissionToAgent_AND_MustGeneratePackagingSlip()
+        public void PaymentFor_BookProduct_MustGenerateCommissionToAgent_AND_MustGenerateDuplicateSlipForRoyalty()
         {
             IProduct physicalProduct = new ProductBook();
 
