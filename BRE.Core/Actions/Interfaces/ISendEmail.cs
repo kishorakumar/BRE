@@ -6,6 +6,6 @@ namespace BRE.Core.Actions
 {
     public interface ISendEmail
     {
-        string ActivateMembership(string from, string to, string body);
+        string SendEmail(string from, string to, string body);
     }
 }

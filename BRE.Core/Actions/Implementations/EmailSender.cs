@@ -6,7 +6,7 @@ namespace BRE.Core.Actions.Implementations
 {
     public class EmailSender : ISendEmail
     {
-        public string ActivateMembership(string from, string to, string body)
+        public string SendEmail(string from, string to, string body)
         {
             bool success = true;
             //Do some operation
