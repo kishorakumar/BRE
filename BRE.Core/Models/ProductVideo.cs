@@ -11,7 +11,13 @@ namespace BRE.Core.Models
 
         public List<string> PaymentDone()
         {
-            throw new NotImplementedException();
+            List<string> statues = new List<string>();
+            if(ProductName.Equals("Learning to Ski"))
+            {
+                statues.Add("Added 'First Aid' for free (as per court decision 1997) ");
+            }
+
+            return statues;
         }
     }
 }
