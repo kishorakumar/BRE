@@ -6,7 +6,7 @@ namespace BRE.Core.Models
 {
     public class MembershipNew : IProduct
     {
-        public ProductTypes ProductType { get;}
+        public ProductTypes ProductType { get { return ProductTypes.NewMembership; } }
         public string ProductName { get; set; }
 
         public List<string> PaymentDone()
