@@ -10,10 +10,14 @@ namespace BRE.Core.Actions
         public string GenerateDuplicatePackingSlipForRoyalty(IProduct product)
         {
             bool success = true;
-            //Do some operation
-            if (success)
-                return "Generated Duplicate packing slip for the royalty department";
-            return "Error in Generating Duplicate packing slip for the royalty department";
+            if (product.ProductType.Equals(ProductTypes.Book))
+            {
+                //Do some operation
+                if (success)
+                    return "Generated Duplicate packing slip for the royalty department";
+                return "Error in Generating Duplicate packing slip for the royalty department";
+            }
+            return string.Empty;
         }
     }
 }

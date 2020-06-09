@@ -12,7 +12,7 @@ namespace BRE.Core.Actions.Implementations
             bool success = true;
             string status = string.Empty;
             //Do some operation
-            if (product.ProductName.Equals("Learning to Ski"))
+            if (product.ProductType.Equals(ProductTypes.Video) && product.ProductName.Equals("Learning to Ski"))
             {
                 status = "Added 'First Aid' for free (as per court decision 1997) ";
             }

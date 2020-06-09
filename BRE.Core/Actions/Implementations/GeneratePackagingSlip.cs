@@ -10,10 +10,14 @@ namespace BRE.Core.Actions
         public string GeneratePackingSlip(IProduct product)
         {
             bool success = true;
-            //Do some operation
-            if (success)
-                return "Generated Packaging Slip";
-            return "Error in Generating Packaging slip";
+            if (product.ProductType.Equals(ProductTypes.PhyscialProduct))
+            {
+                //Do some operation
+                if (success)
+                    return "Generated Packaging Slip";
+                return "Error in Generating Packaging slip";
+            }
+            return string.Empty;
         }
     }
 }
