@@ -9,11 +9,6 @@ namespace BRE.UnitTest
 {
     public class NewMembershipPayment_Test
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void PaymentFor_NewMembership_MustActivateMembership()
         {

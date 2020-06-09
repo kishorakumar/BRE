@@ -8,14 +8,5 @@ namespace BRE.Core.Models
     {
         public ProductTypes ProductType { get { return ProductTypes.Book; } }
         public string ProductName { get; set; }
-
-        public List<string> PaymentDone()
-        {
-            List<string> statues = new List<string>();
-            statues.Add("Generated Duplicate packing slip for the royalty department");
-            statues.Add("Generated Commision To Agent");
-
-            return statues;
-        }
     }
 }

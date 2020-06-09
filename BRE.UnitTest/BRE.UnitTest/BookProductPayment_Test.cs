@@ -9,13 +9,6 @@ namespace BRE.UnitTest
 {
     public class BookProductPayment_Test
     {
-        private IPostPaymentActions postPaymentHandler;
-        [SetUp]
-        public void Setup()
-        {
-            
-        }
-
         [Test]
         public void PaymentFor_BookProduct_MustGenerateDuplicateSlipForRoyalty()
         {
@@ -38,7 +31,7 @@ namespace BRE.UnitTest
             var mockEmailSender = new Mock<ISendEmail>();
             var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
 
-            postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
+            var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
                                                    mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
                                                    mockPackagingSlipGenerator.Object, mockMembershipUpgrade.Object,
                                                    mockEmailSender.Object);
@@ -72,7 +65,7 @@ namespace BRE.UnitTest
             var mockEmailSender = new Mock<ISendEmail>();
             var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
 
-            postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
+            var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
                                                    mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
                                                    mockPackagingSlipGenerator.Object, mockMembershipUpgrade.Object,
                                                    mockEmailSender.Object);
@@ -105,7 +98,7 @@ namespace BRE.UnitTest
             var mockEmailSender = new Mock<ISendEmail>();
             var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
 
-            postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
+            var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
                                                    mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
                                                    mockPackagingSlipGenerator.Object, mockMembershipUpgrade.Object,
                                                    mockEmailSender.Object);

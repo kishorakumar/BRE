@@ -9,11 +9,6 @@ namespace BRE.UnitTest
 {
     public class PhysicalProductPayment_Test
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void PaymentFor_PhysicalProduct_MustGeneratePackagingSlip()
         {

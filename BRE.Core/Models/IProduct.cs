@@ -8,7 +8,5 @@ namespace BRE.Core.Models
     {
         public ProductTypes ProductType { get; }
         public string ProductName { get; set; }
-
-        List<string> PaymentDone();
     }
 }
