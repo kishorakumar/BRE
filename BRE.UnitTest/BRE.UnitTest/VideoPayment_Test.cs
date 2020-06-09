@@ -3,16 +3,12 @@ using BRE.Core;
 using BRE.Core.Models;
 using Moq;
 using System.Collections.Generic;
+using BRE.Core.Actions;
 
 namespace BRE.UnitTest
 {
     public class VideoPayment_Test
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void PaymentFor_VideoLearningSki_MustAddFirstAidVideoForFree()
         {
@@ -20,7 +16,29 @@ namespace BRE.UnitTest
 
             physicalProduct.ProductName = "Learning to Ski";
 
-            List<string> statuses = physicalProduct.PaymentDone();
+            var mockPackagingSlipGenerator = new Mock<IGeneratePackagingSlip>();
+
+            var mockComisionGenerator = new Mock<IGenerateCommisionToAgent>();
+            var mockDuplicatePackagingSlipGenerator = new Mock<IGenerateDuplicatePackingSlipForRoyalty>();
+
+
+            var mockMembershipNew = new Mock<IActivateMembership>();
+            
+            var mockMembershipUpgrade = new Mock<IUpgradeMembership>();
+            var mockEmailSender = new Mock<ISendEmail>();
+            
+            var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
+            mockAddFreeProducts.Setup(m => m.AddEligibleFreeProducts(physicalProduct))
+                                   .Returns($"Added 'First Aid' for free (as per court decision 1997) ");
+
+            var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
+                                                   mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
+                                                   mockPackagingSlipGenerator.Object, mockMembershipUpgrade.Object,
+                                                   mockEmailSender.Object);
+
+            List<IProduct> products = new List<IProduct>() { physicalProduct };
+            List<string> statuses = postPaymentHandler.PerformPostPaymentActions(products);
+
 
             Assert.IsTrue(statuses.Contains($"Added 'First Aid' for free (as per court decision 1997) "));
         }
@@ -32,7 +50,28 @@ namespace BRE.UnitTest
 
             physicalProduct.ProductName = "Other than Learning to Ski";
 
-            List<string> statuses = physicalProduct.PaymentDone();
+            var mockPackagingSlipGenerator = new Mock<IGeneratePackagingSlip>();
+
+            var mockComisionGenerator = new Mock<IGenerateCommisionToAgent>();
+            var mockDuplicatePackagingSlipGenerator = new Mock<IGenerateDuplicatePackingSlipForRoyalty>();
+
+
+            var mockMembershipNew = new Mock<IActivateMembership>();
+
+            var mockMembershipUpgrade = new Mock<IUpgradeMembership>();
+            var mockEmailSender = new Mock<ISendEmail>();
+
+            var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
+            mockAddFreeProducts.Setup(m => m.AddEligibleFreeProducts(physicalProduct))
+                                   .Returns($"Added 'First Aid' for free (as per court decision 1997) ");
+
+            var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
+                                                   mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
+                                                   mockPackagingSlipGenerator.Object, mockMembershipUpgrade.Object,
+                                                   mockEmailSender.Object);
+
+            List<IProduct> products = new List<IProduct>() { physicalProduct };
+            List<string> statuses = postPaymentHandler.PerformPostPaymentActions(products);
 
             Assert.IsTrue(!statuses.Contains($"Sent Email to {physicalProduct.ProductName}"));
         }

@@ -6,7 +6,7 @@ namespace BRE.Core.Models
 {
     public class MembershipUpgrade : IProduct
     {
-        public ProductTypes ProductType { get; }
+        public ProductTypes ProductType { get { return ProductTypes.UpgradeMembership; } }
         public string ProductName { get; set; }
 
         public List<string> PaymentDone()

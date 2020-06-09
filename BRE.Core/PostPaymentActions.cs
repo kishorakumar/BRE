@@ -53,7 +53,7 @@ namespace BRE.Core
                         break;
                     case ProductTypes.UpgradeMembership:
                         statues.Add(_upgradeMembership.UpgradeMembership(product));
-                        statues.Add(_sendEmail.SendEmail("Admin", product.ProductName, "Upaded"));
+                        statues.Add(_sendEmail.SendEmail("Admin", product.ProductName, "Upgraded"));
                         break;
                     case ProductTypes.Video:
                         //No Special cases to handle.
