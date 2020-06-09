@@ -11,7 +11,11 @@ namespace BRE.Core.Models
 
         public List<string> PaymentDone()
         {
-            throw new NotImplementedException();
+            List<string> statues = new List<string>();
+            statues.Add($"Activated {ProductName }'s membership");
+            statues.Add($"Sent Email to {ProductName}");
+
+            return statues;
         }
     }
 }
