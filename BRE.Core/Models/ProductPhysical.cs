@@ -9,9 +9,13 @@ namespace BRE.Core.Models
         public ProductTypes ProductType { get { return ProductTypes.PhyscialProduct; } }
         public string ProductName { get ; set ; }
 
-        public string PaymentDone()
+        public List<string> PaymentDone()
         {
-            return "Generated Packaging Slip";
+            List<string> statues = new List<string>();
+            statues.Add("Generated Packaging Slip");
+            statues.Add("Generated Commision To Agent");
+
+            return statues;
         }
     }
 }

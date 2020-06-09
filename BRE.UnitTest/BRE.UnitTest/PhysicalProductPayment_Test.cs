@@ -2,6 +2,7 @@ using NUnit.Framework;
 using BRE.Core;
 using BRE.Core.Models;
 using Moq;
+using System.Collections.Generic;
 
 namespace BRE.UnitTest
 {
@@ -19,9 +20,9 @@ namespace BRE.UnitTest
 
             physicalProduct.ProductName = "Basket";
 
-            string status = physicalProduct.PaymentDone();
+            List<string> statuses = physicalProduct.PaymentDone();
 
-            Assert.AreEqual("Generated Packaging Slip", status);
+            Assert.IsTrue(statuses.Contains("Generated Packaging Slip"));
         }
 
         [Test]
@@ -31,9 +32,22 @@ namespace BRE.UnitTest
 
             physicalProduct.ProductName = "Basket";
 
-            string status = physicalProduct.PaymentDone();
+            List<string> statuses = physicalProduct.PaymentDone();
 
-            Assert.AreEqual("Generated Commision To Agent", status);
+            Assert.IsTrue(statuses.Contains("Generated Commision To Agent"));
+        }
+
+        [Test]
+        public void PaymentFor_PhysicalProduct_MustGenerateCommissionToAgent_AND_MustGeneratePackagingSlip()
+        {
+            IProduct physicalProduct = new ProductPhysical();
+
+            physicalProduct.ProductName = "Basket";
+
+            List<string> statuses = physicalProduct.PaymentDone();
+
+            Assert.IsTrue(statuses.Contains("Generated Commision To Agent"));
+            Assert.IsTrue(statuses.Contains("Generated Packaging Slip"));
         }
     }
 }
