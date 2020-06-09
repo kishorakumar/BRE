@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRE.Core", "BRE.Core\BRE.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRE.UnitTest", "BRE.UnitTest\BRE.UnitTest\BRE.UnitTest.csproj", "{F521BCB6-6C0B-46B3-A966-141B3891EC16}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{C4BF13A9-6328-4066-A929-0A56AAD04B82}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\GWT [Given when Then].docx = Documents\GWT [Given when Then].docx
+		Documents\Rules.docx = Documents\Rules.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
