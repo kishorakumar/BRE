@@ -8,5 +8,10 @@ namespace BRE.Core.Models
     {
         public string ProductType { get; set; }
         public string ProductName { get; set; }
+
+        public string PaymentDone()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
