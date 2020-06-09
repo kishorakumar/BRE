@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BRE.Core.Actions.Interfaces
+namespace BRE.Core.Actions
 {
     public interface IGenerateDuplicatePackingSlipForRoyalty
     {
-        string GenerateDuplicatePackingSlipForRoyalty(IProduct product);
+        public string GenerateDuplicatePackingSlipForRoyalty(IProduct product);
     }
 }
