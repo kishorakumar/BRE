@@ -23,5 +23,17 @@ namespace BRE.UnitTest
 
             Assert.AreEqual("Generated Packaging Slip", status);
         }
+
+        [Test]
+        public void PaymentFor_PhysicalProduct_MustGenerateCommissionToAgent()
+        {
+            IProduct physicalProduct = new ProductPhysical();
+
+            physicalProduct.ProductName = "Basket";
+
+            string status = physicalProduct.PaymentDone();
+
+            Assert.AreEqual("Generated Commision To Agent", status);
+        }
     }
 }
