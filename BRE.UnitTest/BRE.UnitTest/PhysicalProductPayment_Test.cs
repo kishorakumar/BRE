@@ -17,7 +17,6 @@ namespace BRE.UnitTest
         {
             IProduct physicalProduct = new ProductPhysical();
 
-            physicalProduct.ProductType = "Physical";
             physicalProduct.ProductName = "Basket";
 
             string status = physicalProduct.PaymentDone();

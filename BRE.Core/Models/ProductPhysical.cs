@@ -6,7 +6,7 @@ namespace BRE.Core.Models
 {
     public class ProductPhysical : IProduct
     {
-        public string ProductType { get ; set ; }
+        public ProductTypes ProductType { get { return ProductTypes.PhyscialProduct; } }
         public string ProductName { get ; set ; }
 
         public string PaymentDone()
