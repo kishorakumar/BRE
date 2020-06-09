@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRE.Core", "BRE.Core\BRE.Core.csproj", "{58EC0091-4D31-4913-81D0-BEC404D843FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRE.UnitTest", "BRE.UnitTest\BRE.UnitTest\BRE.UnitTest.csproj", "{F521BCB6-6C0B-46B3-A966-141B3891EC16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58EC0091-4D31-4913-81D0-BEC404D843FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EC0091-4D31-4913-81D0-BEC404D843FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EC0091-4D31-4913-81D0-BEC404D843FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EC0091-4D31-4913-81D0-BEC404D843FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F521BCB6-6C0B-46B3-A966-141B3891EC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F521BCB6-6C0B-46B3-A966-141B3891EC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F521BCB6-6C0B-46B3-A966-141B3891EC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F521BCB6-6C0B-46B3-A966-141B3891EC16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09C6B1F3-E0AB-43D7-B5F0-2CE60EE55F5D}
+	EndGlobalSection
+EndGlobal
