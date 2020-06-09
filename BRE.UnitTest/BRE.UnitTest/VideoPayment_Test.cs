@@ -63,7 +63,7 @@ namespace BRE.UnitTest
 
             var mockAddFreeProducts = new Mock<IAddEligibleFreeProducts>();
             mockAddFreeProducts.Setup(m => m.AddEligibleFreeProducts(physicalProduct))
-                                   .Returns($"Added 'First Aid' for free (as per court decision 1997) ");
+                                   .Returns($"");
 
             var postPaymentHandler = new PostPaymentActions(mockMembershipNew.Object, mockAddFreeProducts.Object,
                                                    mockComisionGenerator.Object, mockDuplicatePackagingSlipGenerator.Object,
@@ -73,7 +73,7 @@ namespace BRE.UnitTest
             List<IProduct> products = new List<IProduct>() { physicalProduct };
             List<string> statuses = postPaymentHandler.PerformPostPaymentActions(products);
 
-            Assert.IsTrue(!statuses.Contains($"Sent Email to {physicalProduct.ProductName}"));
+            Assert.IsTrue(!statuses.Contains($"Added 'First Aid' for free (as per court decision 1997) "));
         }
                 
     }

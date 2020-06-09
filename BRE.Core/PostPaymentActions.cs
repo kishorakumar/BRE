@@ -59,12 +59,10 @@ namespace BRE.Core
                         //No Special cases to handle.
                         //Free product has been handled in default case to make adding free products flwxible.
                         break;
-                    default:
-                        string status = _addEligibleFreeProducts.AddEligibleFreeProducts(product);
-                        if (!string.IsNullOrEmpty(status))
-                            statues.Add(status);
-                        break;
                 }
+                string status = _addEligibleFreeProducts.AddEligibleFreeProducts(product);
+                if (!string.IsNullOrEmpty(status))
+                    statues.Add(status);
             }
 
             return statues;
