@@ -11,7 +11,11 @@ namespace BRE.Core.Models
 
         public List<string> PaymentDone()
         {
-            throw new NotImplementedException();
+            List<string> statues = new List<string>();
+            statues.Add("Generated Duplicate packing slip for the royalty department");
+            statues.Add("Generated Commision To Agent");
+
+            return statues;
         }
     }
 }

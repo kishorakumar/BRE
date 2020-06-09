@@ -22,7 +22,7 @@ namespace BRE.UnitTest
 
             List<string> statuses = physicalProduct.PaymentDone();
 
-            Assert.IsTrue(statuses.Contains("Generated Packaging Slip"));
+            Assert.IsTrue(statuses.Contains("Generated Duplicate packing slip for the royalty department"));
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace BRE.UnitTest
             List<string> statuses = physicalProduct.PaymentDone();
 
             Assert.IsTrue(statuses.Contains("Generated Commision To Agent"));
-            Assert.IsTrue(statuses.Contains("Generated Packaging Slip"));
+            Assert.IsTrue(statuses.Contains("Generated Duplicate packing slip for the royalty department"));
         }
     }
 }
